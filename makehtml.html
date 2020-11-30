@@ -1,0 +1,42 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<title>作品一覧</title>
+<style>
+</style>
+</head><body>
+
+<h1>作品一覧</h1>
+
+<script type="module">
+
+import { CSV } from "https://code4sabae.github.io/js/CSV.js";
+
+const makehtml = async () => {
+  const data = CSV.toJSON(await CSV.fetch("works-fukui2020.csv"));
+  console.log(data);
+  const res = [];
+  for (const d of data) {
+    res.push(`<p>`);
+    res.push(`<h3>${d.作品名} - ${d.所属} 小学${d.学年}年生</h3>`);
+    res.push(d.紹介);
+    res.push(`</p>\n`);
+  }
+  return res.join("");
+};
+window.onload = async () => {
+  const html = await makehtml();
+  ta.value = html;
+  main.innerHTML = html;
+};
+</script>
+
+<div id="main"></div>
+<textarea id=ta style="width:80%; height:10em"></textarea>
+
+<hr>
+App: <a href=https://fukuno.jig.jp/3049>福井県のプログラミング好き小学生が考えた「もっと好きになる わたしのまち」とは!? - 全国選抜小学生プログラミング大会福井大会 - 一日一創</a> (<a href=https://github.com/code4fukui/gamemap/>src on GitHub</a>)<br>
+Data: <a href=works-fukui2020.csv>福井県大会作品一覧CSVオープンデータ</a> - <a href=https://zsjk.jp/fukui/>福井県大会 | 全国選抜小学生プログラミング大会</a><br>
+
+</body>
+</html>
+
+
