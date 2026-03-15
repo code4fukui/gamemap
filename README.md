@@ -1,5 +1,7 @@
 # gamemap
 
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
+
 A web-based map application that displays information about programming projects created by elementary school students in Fukui, Japan.
 
 ## Demo
