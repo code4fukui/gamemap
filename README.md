@@ -25,4 +25,4 @@ No special requirements. The application runs in a web browser.
 The project data is stored in a CSV file (`works-fukui2020.csv`) and a position data file (`positions.csv`). These files are fetched and processed by the JavaScript code to populate the map.
 
 ## License
-This project is licensed under the MIT License.
+MIT License — see [LICENSE](LICENSE).
